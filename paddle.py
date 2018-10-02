@@ -17,7 +17,7 @@ class Paddle:
 
         self.__color = self.settings.get_paddle_color()
         self.rect = pygame.Rect(0, 0, 1, 1)
-        self.__ding_sound = pygame.mixer.Sound('Sounds/ding.wav')
+        self.ding_sound = pygame.mixer.Sound('Sounds/ding.wav')
 
     def draw_paddle(self):
         pygame.draw.rect(self.screen, self.__color, self.rect)
@@ -76,7 +76,7 @@ class HUPaddle(UserPaddle):
         theta = ball_rect.centerx - self.rect.centerx
         self.ball.velocityVector.opposite_y()
         self.ball.velocityVector.setx(self.ball_speed_function(theta))
-        pygame.mixer.Sound.play(self.__ding_sound)
+        pygame.mixer.Sound.play(self.ding_sound)
 
 
 #   Vertical Paddles Class
@@ -102,7 +102,7 @@ class VUPaddle(UserPaddle):
         theta = ball_rect.centery - self.rect.centery
         self.ball.velocityVector.opposite_x()
         self.ball.velocityVector.sety(self.ball_speed_function(theta))
-        pygame.mixer.Sound.play(self.__ding_sound)
+        pygame.mixer.Sound.play(self.ding_sound)
 
 
 #   ######################################################
@@ -141,7 +141,7 @@ class HAIPaddle(AIPaddle):
         self.ball.velocityVector.opposite_y()
         self.ball.velocityVector.setx(self.ball_speed_function(theta))
         self.change_speed()
-        pygame.mixer.Sound.play(self.__ding_sound)
+        pygame.mixer.Sound.play(self.ding_sound)
 
 
 #  ADD AI EPSILON LATER - abs(self.ball.get_x_pos() - self.rect.centerx) - epsilon > 0 ################
@@ -169,4 +169,4 @@ class VAIPaddle(AIPaddle):
         self.ball.velocityVector.opposite_x()
         self.ball.velocityVector.sety(self.ball_speed_function(theta))
         self.change_speed()
-        pygame.mixer.Sound.play(self.__ding_sound)
+        pygame.mixer.Sound.play(self.ding_sound)

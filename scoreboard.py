@@ -30,6 +30,9 @@ class ScoreBoard:
         self.__font = pygame.font.SysFont('Comic Sans MS', 14)
         self.__text = self.__font.render('Level: 1', False, self.settings.get_paddle_color())
 
+        self.__playImage = None
+        self.__playRect = None
+
         self.reset_score()
         self.show_scores()
 
@@ -144,6 +147,7 @@ class ScoreBoard:
             self.__farRightScoreRect.centerx = (self.settings.get_screen_width() / 2) + 245
             self.show_win("right")
             self.show_scores()
+            pygame.display.flip()
 
             time.sleep(1)
             gF.user_win(self.ball, self.paddles, self.settings)

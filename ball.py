@@ -1,6 +1,5 @@
 import pygame
 import random
-import math
 import time
 import vector as v
 
@@ -63,4 +62,3 @@ class Ball:
 
     def update_rect(self, length, width):
         self.__rect = pygame.Rect(0, 0, length, width)
-

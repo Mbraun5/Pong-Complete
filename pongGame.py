@@ -6,7 +6,6 @@ import settings as s
 import titleScreen as tS
 import scoreboard as sb
 
-import time
 
 def run_game():
     #   Provides consistent window positioning. These settings center pygame window for my computer.
