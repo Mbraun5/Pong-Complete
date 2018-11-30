@@ -136,7 +136,7 @@ class ScoreBoard:
 
             time.sleep(1)
             self.show_play_again()
-            gF.ai_win(self.ball, self.paddles, self.settings, self.title_screen)
+            gF.GameFunctions.ai_win(self.ball, self.paddles, self.settings, self.title_screen)
             self.reset_score()
 
         else:
@@ -150,7 +150,7 @@ class ScoreBoard:
             pygame.display.flip()
 
             time.sleep(1)
-            gF.user_win(self.ball, self.paddles, self.settings)
+            gF.GameFunctions.user_win(self.ball, self.paddles, self.settings)
             self.update_text()
             self.reset_score()
             time.sleep(1)

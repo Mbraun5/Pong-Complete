@@ -144,8 +144,6 @@ class HAIPaddle(AIPaddle):
         pygame.mixer.Sound.play(self.ding_sound)
 
 
-#  ADD AI EPSILON LATER - abs(self.ball.get_x_pos() - self.rect.centerx) - epsilon > 0 ################
-
 #   Vertical AI Paddles
 class VAIPaddle(AIPaddle):
     def __init__(self, ball, screen, settings):
